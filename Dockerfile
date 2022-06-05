@@ -1,4 +1,4 @@
-FROM python:3.10-slim
+FROM python:3.9-slim
 
 RUN groupadd -r user1 && useradd --no-log-init --create-home -r -g user1 user1
 

@@ -12,3 +12,15 @@ services:
       - PYTHONPATH="/home/user1/weather_app/src:${PYTHONPATH}"
     volumes:
       - ./:/home/user1/weather_app
+
+  weather_app_pytest:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "8080:8080"
+    command: "pytest"
+    environment:
+      - PYTHONPATH="/home/user1/weather_app/src:${PYTHONPATH}"
+    volumes:
+      - ./:/home/user1/weather_app
