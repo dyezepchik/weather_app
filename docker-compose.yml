@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  weather_app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "8080:8080"
+    command: "uvicorn weather_app.src.main:app --reload --port 8080 --host 0.0.0.0"
+    environment:
+      - PYTHONPATH="/home/user1/weather_app/src:${PYTHONPATH}"
+    volumes:
+      - ./:/home/user1/weather_app
